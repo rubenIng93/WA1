@@ -1,0 +1,16 @@
+{
+  "name": "wa1",
+  "version": "1.0.0",
+  "main": "ex3.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dayjs": "^1.10.4",
+    "sqlite3": "^5.0.2"
+  },
+  "devDependencies": {},
+  "description": ""
+}
