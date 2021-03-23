@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ToDo Manager</title>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="container-fluid">
+            <nav class="navbar navbar-dark bg-success">                
+                <a class="navbar-brand"><img width="30" height="30" class="d-inline-block align-top mr-2 bg-transparent" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqFxkOGfKZSG1H7ZaIt5vvPB2VWvLelgZCeQ&usqp=CAU" alt="">ToDo Manager</a>
+                <form class="form-inline">
+                  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                </form>
+                <a class="navbar-brand" href="#">
+                    <img src="user_logo3.png" width="30" height="30" class="d-inline-block align-top" alt="">
+                </a>
+            </nav>
+            <div class="row">
+                <aside class="col-4 bg-light p-2" id="sidebar">
+                    <ul class="list-group list-group-flush bg-light p-2">
+                        <li class="list-group-item active bg-success" aria-current="true"><a class="text-light" href="#">All</a></li>
+                        <li class="list-group-item bg-light"><a class="text-body" href="#">Important</a></li>
+                        <li class="list-group-item bg-light"><a class="text-body" href="#">Today</a></li>
+                        <li class="list-group-item bg-light"><a class="text-body" href="#">Next 7 Days</a></li>
+                        <li class="list-group-item bg-light"><a class="text-body" href="#">Private</a></li>
+                    </ul>
+                </aside>
+                <main class="col-sm-8 d-flex flex-column">
+                    <h1 class="p-2">All</h1>
+                    <ul class="list-group list-group-flush p-2">
+                        <li class="list-group-item">
+                            <div class="d-flex justify-content-between">                                
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                                <label class="form-check-label text-right" for="inlineCheckbox1">Complete Lab 2</label>
+                                <span>
+                                    Monday 22 March 2021 at 14:30  
+                                </span>                                                    
+                            </div>
+                            
+                        </li>
+                        <li class="list-group-item">
+                            <div class="d-flex justify-content-between">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option1">
+                                <label class="form-check-label text-right" for="inlineCheckbox2">Buy some groceries</label>
+                                <span>
+                                    <img width=20 height=20 src="user_logo.png" alt="" class="d-inline-block align-center mr-2">
+                                </span>
+                                <span>
+                                    Today at 14:00  
+                                </span>
+                            </div>                           
+                        </li>
+                        <li class="list-group-item">
+                            <div class="d-flex justify-content-between">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option1">
+                                <label class="form-check-label text-right text-danger" for="inlineCheckbox3">Read a good book!</label>
+                            </div>                           
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-end flex-column mb-3 mt-auto">
+                        <button type="button" class="btn rounded-circle bg-success text-light mt-auto">
+                            +
+                        </button>
+                    </div>
+
+                </main>
+                
+            </div>
+        </div>
+    </body>
+</html>

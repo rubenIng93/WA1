@@ -1,0 +1,16 @@
+#sidebar{
+    min-height: 92vh;
+}
+main{
+    min-height: 92vh;;
+}
+
+nav{
+    margin-left: -1rem;
+    margin-right: -1rem;
+}
+
+a:hover{
+    font-weight: bold;
+}
+
