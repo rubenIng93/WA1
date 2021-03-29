@@ -97,6 +97,7 @@ for (let i=0 ; i < taskList.length(); i++){
     div2.className = "custom-control custom-checkbox";
     input.className = "custom-control-input";
     input.type = 'checkbox';
+    input.id = `check-t${i+1}`;
     if (tempTask.urgent){
         label.className = "custom-control-label important";
     }else{
