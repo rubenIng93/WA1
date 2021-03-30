@@ -1,5 +1,10 @@
 'use strict';
 
+//let isBetween = require('dayjs/plugin/isBetween');
+//dayjs.extend(isBetween);
+
+//const dayjs = require('dayjs');
+
 // define an object Task
 function Task(id, description, urgent=false, priv=true, deadline=null){
     this.id = id;
@@ -40,10 +45,38 @@ function TaskList(){
         console.log(this.tasks.toString());
     }
 
+    // filter for important tasks
+    this.filterImportant = () => {
+        let filteredTasks = this.tasks.filter(task => task.urgent == true);
+        return filteredTasks;
+    }
+
+    //filter for private tasks
+    this.filterPrivate = () => {
+        let filteredTasks = this.tasks.filter(task => task.private == true);
+        return filteredTasks;
+    }
+
+    // filter the tasks according to deadline (today)
+    this.filterToday = () => {
+        let today = dayjs();
+        let filteredTasks = this.tasks.filter(task => dayjs(task.deadline).isSame(today, 'day'));
+        return filteredTasks;
+    }
+
+    this.filterNext7Days = () => {
+        let today = dayjs();
+        let after7 = today.add(7, 'day');
+        let filteredTasks = this.tasks.filter(task => dayjs(task.deadline).isBefore(after7, 'day')
+            && dayjs(task.deadline).isAfter(today.subtract(1,'day'), 'day'));
+        return filteredTasks;
+    }
+
+    /*
     this.filterAndPrint = () => {
         let filteredTasks = this.tasks.filter(task => task.urgent == true);
         console.log(filteredTasks.toString());
-    }
+    }*/
 
     this.length = () => {
         return this.tasks.length ; 
@@ -63,9 +96,10 @@ function TaskList(){
 
 }
 
-const t2 = new Task(2, 'monday lab', false, false, 'March 16, 2021 10:00 AM');
-const t3 = new Task(1, 'laundry', false, true, null);
+const t2 = new Task(2, 'monday lab', false, false, 'April 3, 2021 10:00 AM');
+const t3 = new Task(1, 'laundry', false, true, 'March 30, 2021 11:00 AM');
 const t1 = new Task(3, 'phone call', true, false, 'March 8, 2021 4:20 PM');
+
 
 
 let taskList = new TaskList();
@@ -136,5 +170,9 @@ for (let i=0 ; i < taskList.length(); i++){
 
 // set the filters
 const aside = document.querySelector('aside div');
-
- 
+/*
+console.log(taskList.filterImportant());
+console.log(taskList.filterPrivate());
+console.log(taskList.filterToday()); 
+console.log(taskList.filterNext7Days());
+*/
